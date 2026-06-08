@@ -16,15 +16,16 @@
     "protein_g": 30,
     "fat_g": 25,
     "health_score": 4,
-    "comment": "단백질이 풍부하고 다양한 영양소가 포함되어 있습니다. 전체적으로 균형 잡힌 식사입니다.",
+    "comment": "영양이 균형 잡힌 메뉴로, 에너지를 보충하기에 좋습니다. 특히 단백질이 풍부하여 근육 회복에 도움을 줍니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
       "고단백",
-      "볶음밥",
-      "국물"
+      "국물포함",
+      "매운맛",
+      "영양가득"
     ],
-    "cheer": "화요일을 맞아 맛있는 한 끼로 에너지를 충전하세요!"
+    "cheer": "화요일에 기분 좋게 한 끼, 맛있게 드시고 힘내세요!"
   },
   "allergens": [
     "닭고기",
@@ -40,5 +41,5 @@
     "배추김치"
   ],
   "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-09.png?v=2026-06-09",
-  "notified": true
+  "notified": false
 }
