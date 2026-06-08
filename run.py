@@ -10,9 +10,9 @@ import sys
 import logging
 import traceback
 
-from lunchbot import config, cache, scraper, ai, cards, teams, analytics
+from lunchbot import config, cache, scraper, ai, cards, teams, analytics, allergens
 from lunchbot.errors import ScrapeError, MenuNotFoundError, OpenAIError, TeamsError
-from lunchbot.utils import today_str, weekday_name
+from lunchbot.utils import today_str, weekday_name, next_schoolday_name
 
 log = logging.getLogger("run")
 
@@ -34,26 +34,40 @@ def cmd_build():
         log.info("캐시 존재 — OpenAI 재호출 생략 (%s)", date)
         return
 
-    # 1) 스크래핑
+    today = weekday_name()
+    tomorrow_label = next_schoolday_name()
+
+    # 1) 스크래핑 (주간 전체를 한 번에)
     try:
-        menu = scraper.fetch_today_menu()
-    except MenuNotFoundError as e:
-        # 휴무/미등록은 장애가 아님: 빈 메뉴로 캐시만 남겨 재시도 방지
-        log.warning("메뉴 없음: %s", e)
-        cache.save(date, {"date": date, "weekday": weekday_name(),
-                          "menu": [], "analysis": None,
-                          "image_url": None, "notified": False})
-        return
+        week = scraper.fetch_week()
     except ScrapeError as e:
         log.error("스크래핑 실패: %s", e)
         teams.send_admin_error(ScrapeError.stage, str(e))
         sys.exit(1)
 
+    menu = week.get(today, [])
+    tomorrow_menu = week.get(tomorrow_label, [])
+
+    if not menu:
+        # 휴무/미등록은 장애가 아님: 빈 메뉴로 캐시만 남겨 재시도 방지
+        log.warning("오늘(%s) 메뉴 없음", today)
+        cache.save(date, {"date": date, "weekday": today,
+                          "menu": [], "analysis": None, "allergens": [],
+                          "tomorrow_label": tomorrow_label,
+                          "tomorrow_menu": tomorrow_menu,
+                          "image_url": None, "notified": False})
+        return
+
+    # 알레르기 감지 (AI 불필요)
+    found_allergens = allergens.detect(menu)
+    if found_allergens:
+        log.info("알레르기 감지: %s", found_allergens)
+
     # 2) AI 분석 (실패해도 메뉴 전송은 계속)
     analysis = None
     if config.OPENAI_API_KEY:
         try:
-            analysis = ai.analyze_menu(menu)
+            analysis = ai.analyze_menu(menu, weekday=today)
             log.info("AI 분석: %s", analysis)
         except OpenAIError as e:
             log.error("AI 분석 실패(계속 진행): %s", e)
@@ -71,8 +85,11 @@ def cmd_build():
             log.error("이미지 생성 실패(계속 진행): %s", e)
             teams.send_admin_error("openai-image", str(e))
 
-    cache.save(date, {"date": date, "weekday": weekday_name(),
+    cache.save(date, {"date": date, "weekday": today,
                       "menu": menu, "analysis": analysis,
+                      "allergens": found_allergens,
+                      "tomorrow_label": tomorrow_label,
+                      "tomorrow_menu": tomorrow_menu,
                       "image_url": image_url, "notified": False})
 
 
@@ -91,7 +108,9 @@ def cmd_notify():
             teams.send_admin_error(ScrapeError.stage, str(e))
             sys.exit(1)
         rec = {"menu": menu, "analysis": None, "image_url": None,
-               "notified": False, "weekday": weekday_name()}
+               "notified": False, "weekday": weekday_name(),
+               "allergens": allergens.detect(menu),
+               "tomorrow_label": "", "tomorrow_menu": []}
 
     if rec.get("notified") and not config.FORCE:
         log.info("이미 전송됨 — 중복 전송 방지 (%s)", date)
@@ -102,6 +121,9 @@ def cmd_notify():
         rec.get("menu", []), rec.get("analysis"),
         image_url=rec.get("image_url"),
         vote_url=config.VOTE_URL, menu_page_url=config.MENU_URL,
+        allergens=rec.get("allergens"),
+        tomorrow_label=rec.get("tomorrow_label", ""),
+        tomorrow_menu=rec.get("tomorrow_menu"),
     )
     try:
         teams.send_card(card)
