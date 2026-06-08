@@ -1,0 +1,44 @@
+{
+  "date": "2026-06-09",
+  "weekday": "화요일",
+  "menu": [
+    "날치알김치볶음밥",
+    "계란후라이",
+    "팽이버섯장국",
+    "고추마요치킨",
+    "오이피클",
+    "깍두기",
+    "망고쥬스"
+  ],
+  "analysis": {
+    "kcal": 750,
+    "carb_g": 90,
+    "protein_g": 30,
+    "fat_g": 25,
+    "health_score": 4,
+    "comment": "단백질이 풍부하고 다양한 영양소가 포함되어 있습니다. 전체적으로 균형 잡힌 식사입니다.",
+    "diet_friendly": false,
+    "post_workout": true,
+    "tags": [
+      "고단백",
+      "볶음밥",
+      "국물"
+    ],
+    "cheer": "화요일을 맞아 맛있는 한 끼로 에너지를 충전하세요!"
+  },
+  "allergens": [
+    "닭고기",
+    "계란"
+  ],
+  "tomorrow_label": "수요일",
+  "tomorrow_menu": [
+    "콩나물불고기",
+    "수수밥",
+    "근대된장국",
+    "생크림고구마샐러드",
+    "상추무침",
+    "배추김치"
+  ],
+  "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-09.png?v=2026-06-09",
+  "notified": false
+}
