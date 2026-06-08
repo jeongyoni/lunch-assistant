@@ -26,7 +26,8 @@ def _card(body, actions=None):
 
 
 def build_daily_card(date_str, weekday, menu_items, analysis,
-                     image_url=None, vote_url="", menu_page_url=""):
+                     image_url=None, vote_url="", menu_page_url="",
+                     allergens=None, tomorrow_label="", tomorrow_menu=None):
     body = [
         {"type": "TextBlock", "text": "🍱 오늘의 학식",
          "weight": "Bolder", "size": "Large"},
@@ -44,6 +45,13 @@ def build_daily_card(date_str, weekday, menu_items, analysis,
         body.append({"type": "TextBlock",
                      "text": "오늘은 등록된 중식 메뉴가 없습니다 🍙",
                      "wrap": True, "spacing": "Medium"})
+
+    # 알레르기 주의
+    if allergens:
+        body.append({"type": "TextBlock",
+                     "text": "⚠️ 알레르기 주의: " + ", ".join(allergens),
+                     "wrap": True, "spacing": "Small",
+                     "color": "Warning", "weight": "Bolder"})
 
     if image_url:
         body.append({"type": "Image", "url": image_url,
@@ -83,6 +91,22 @@ def build_daily_card(date_str, weekday, menu_items, analysis,
                          "isSubtle": True, "size": "Small", "wrap": True})
         body.append({"type": "TextBlock", "text": "※ AI 추정치이며 참고용입니다.",
                      "isSubtle": True, "size": "Small", "wrap": True})
+
+    # 힘나는 한마디
+    cheer = (analysis or {}).get("cheer")
+    if cheer:
+        body.append({"type": "TextBlock", "text": f"💬 {cheer}",
+                     "wrap": True, "spacing": "Medium", "weight": "Bolder",
+                     "color": "Accent"})
+
+    # 다음 급식일 미리보기
+    if tomorrow_menu:
+        preview = ", ".join(tomorrow_menu[:4])
+        if len(tomorrow_menu) > 4:
+            preview += " 외"
+        label = f"🔜 {tomorrow_label} 메뉴" if tomorrow_label else "🔜 다음 메뉴"
+        body.append({"type": "TextBlock", "text": f"{label}: {preview}",
+                     "wrap": True, "spacing": "Medium", "isSubtle": True})
 
     actions = []
     if menu_page_url:

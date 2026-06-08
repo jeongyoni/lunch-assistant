@@ -29,13 +29,21 @@
           },
           {
             "type": "TextBlock",
-            "text": "• 제육볶음\n• 미역국\n• 김치\n• 잡곡밥",
+            "text": "• 치즈닭갈비\n• 흑미밥\n• 청양된장찌개\n• 불어묵간장조림\n• 새콤쌈무\n• 알타리김치",
             "wrap": true,
             "spacing": "Small"
           },
           {
+            "type": "TextBlock",
+            "text": "⚠️ 알레르기 주의: 소고기, 닭고기, 우유, 생선",
+            "wrap": true,
+            "spacing": "Small",
+            "color": "Warning",
+            "weight": "Bolder"
+          },
+          {
             "type": "Image",
-            "url": "https://raw.githubusercontent.com/your-github-id/lunch-assistant/main/images/2026-06-08.png?v=2026-06-08",
+            "url": "https://raw.../2026-06-08.png",
             "size": "Large",
             "altText": "오늘의 점심 이미지"
           },
@@ -44,11 +52,11 @@
             "facts": [
               {
                 "title": "🔥 예상 칼로리",
-                "value": "약 750 kcal"
+                "value": "약 820 kcal"
               },
               {
                 "title": "🍚 탄·단·지",
-                "value": "탄 90g · 단 32g · 지 26g"
+                "value": "탄 95g · 단 34g · 지 28g"
               },
               {
                 "title": "💚 건강 점수",
@@ -63,12 +71,12 @@
           },
           {
             "type": "TextBlock",
-            "text": "🤖 단백질이 충분하고 운동 후 식사로 적합합니다",
+            "text": "🤖 단백질이 풍부해 든든한 한 끼예요",
             "wrap": true
           },
           {
             "type": "TextBlock",
-            "text": "#고단백 #국물포함",
+            "text": "#고단백 #매콤",
             "isSubtle": true,
             "size": "Small",
             "wrap": true
@@ -79,13 +87,28 @@
             "isSubtle": true,
             "size": "Small",
             "wrap": true
+          },
+          {
+            "type": "TextBlock",
+            "text": "💬 치즈닭갈비로 시작하는 월요일, 한 주도 든든하게 힘내요!",
+            "wrap": true,
+            "spacing": "Medium",
+            "weight": "Bolder",
+            "color": "Accent"
+          },
+          {
+            "type": "TextBlock",
+            "text": "🔜 화요일 메뉴: 제육볶음, 된장국, 콩나물무침, 배추김치 외",
+            "wrap": true,
+            "spacing": "Medium",
+            "isSubtle": true
           }
         ],
         "actions": [
           {
             "type": "Action.OpenUrl",
             "title": "📄 학식 페이지 보기",
-            "url": "https://www.kopo.ac.kr/gumi/..."
+            "url": "https://www.kopo.ac.kr/gm/content.do?menu=12623"
           },
           {
             "type": "Action.OpenUrl",

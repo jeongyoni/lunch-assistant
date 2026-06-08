@@ -17,12 +17,14 @@ def _headers():
     }
 
 
-def analyze_menu(menu_items):
-    """메뉴를 분석해 칼로리·탄단지·건강점수·추천여부·코멘트를 JSON으로 반환."""
+def analyze_menu(menu_items, weekday=""):
+    """메뉴를 분석해 칼로리·탄단지·건강점수·추천여부·코멘트·응원을 JSON으로 반환."""
     menu_str = ", ".join(menu_items)
+    day_line = f"오늘은 {weekday}입니다.\n" if weekday else ""
     prompt = (
         "다음은 한국 구내식당의 점심 메뉴입니다. 한 끼 기준으로 영양을 추정하고 평가해줘. "
         "정확한 측정값이 아니라 합리적인 어림값이면 됩니다.\n"
+        f"{day_line}"
         f"메뉴: {menu_str}\n\n"
         "반드시 아래 JSON 스키마로만, 다른 설명 없이 답해:\n"
         "{\n"
@@ -32,13 +34,15 @@ def analyze_menu(menu_items):
         '  "comment": "단백질이 충분하고 운동 후 식사로 적합합니다",\n'
         '  "diet_friendly": false,\n'
         '  "post_workout": true,\n'
-        '  "tags": ["고단백", "국물포함"]\n'
+        '  "tags": ["고단백", "국물포함"],\n'
+        '  "cheer": "치즈닭갈비로 시작하는 월요일, 든든하게 힘내요!"\n'
         "}\n"
         "- kcal/carb_g/protein_g/fat_g: 정수\n"
         "- health_score: 1~5 정수(5가 가장 건강)\n"
         "- comment: 1~2문장\n"
         "- diet_friendly/post_workout: true 또는 false\n"
-        "- tags: 짧은 키워드 2~4개"
+        "- tags: 짧은 키워드 2~4개\n"
+        "- cheer: 오늘 메뉴와 요일을 살린 따뜻한 응원 한마디(1문장, 매번 다르게)"
     )
     try:
         r = request_with_retry(
@@ -79,6 +83,7 @@ def _normalize(d):
         "diet_friendly": bool(d.get("diet_friendly", False)),
         "post_workout": bool(d.get("post_workout", False)),
         "tags": [str(t).strip() for t in (d.get("tags") or []) if str(t).strip()][:4],
+        "cheer": str(d.get("cheer", "")).strip(),
     }
 
 

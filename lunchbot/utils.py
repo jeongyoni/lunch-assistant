@@ -5,6 +5,15 @@ import datetime
 from .config import KST, WEEKDAYS
 
 
+def next_schoolday_name(dt=None):
+    """다음 급식일(주말 건너뜀)의 요일명. 금요일이면 월요일을 반환."""
+    d = dt or now_kst()
+    nxt = d + datetime.timedelta(days=1)
+    while nxt.weekday() >= 5:  # 토(5)·일(6) 건너뜀
+        nxt += datetime.timedelta(days=1)
+    return WEEKDAYS[nxt.weekday()]
+
+
 def now_kst():
     return datetime.datetime.now(KST)
 
