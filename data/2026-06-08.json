@@ -15,13 +15,15 @@
     "protein_g": 30,
     "fat_g": 25,
     "health_score": 4,
-    "comment": "단백질이 충분하고 운동 후 식사로 적합합니다.",
+    "comment": "영양이 균형 잡혀 있으며, 특히 단백질이 풍부합니다. 에너지가 필요한 하루에 적합합니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
       "고단백",
-      "국물포함"
-    ]
+      "양식",
+      "매운맛"
+    ],
+    "cheer": "치즈닭갈비와 함께하는 화요일, 힘차게 하루를 시작해요!"
   },
   "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-08.png?v=2026-06-08",
   "notified": true
