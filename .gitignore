@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
+# data/ 와 images/ 는 캐시·이미지 영속화를 위해 커밋 대상이므로 무시하지 않음

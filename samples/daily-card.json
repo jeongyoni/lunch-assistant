@@ -1,0 +1,99 @@
+{
+  "type": "message",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.4",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "🍱 오늘의 학식",
+            "weight": "Bolder",
+            "size": "Large"
+          },
+          {
+            "type": "TextBlock",
+            "text": "2026-06-08 (월요일)",
+            "isSubtle": true,
+            "spacing": "None",
+            "wrap": true
+          },
+          {
+            "type": "TextBlock",
+            "text": "오늘의 메뉴",
+            "weight": "Bolder",
+            "spacing": "Medium"
+          },
+          {
+            "type": "TextBlock",
+            "text": "• 제육볶음\n• 미역국\n• 김치\n• 잡곡밥",
+            "wrap": true,
+            "spacing": "Small"
+          },
+          {
+            "type": "Image",
+            "url": "https://raw.githubusercontent.com/your-github-id/lunch-assistant/main/images/2026-06-08.png?v=2026-06-08",
+            "size": "Large",
+            "altText": "오늘의 점심 이미지"
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "🔥 예상 칼로리",
+                "value": "약 750 kcal"
+              },
+              {
+                "title": "🍚 탄·단·지",
+                "value": "탄 90g · 단 32g · 지 26g"
+              },
+              {
+                "title": "💚 건강 점수",
+                "value": "★★★★☆"
+              },
+              {
+                "title": "👍 추천",
+                "value": "💪 운동 후 추천"
+              }
+            ],
+            "spacing": "Medium"
+          },
+          {
+            "type": "TextBlock",
+            "text": "🤖 단백질이 충분하고 운동 후 식사로 적합합니다",
+            "wrap": true
+          },
+          {
+            "type": "TextBlock",
+            "text": "#고단백 #국물포함",
+            "isSubtle": true,
+            "size": "Small",
+            "wrap": true
+          },
+          {
+            "type": "TextBlock",
+            "text": "※ AI 추정치이며 참고용입니다.",
+            "isSubtle": true,
+            "size": "Small",
+            "wrap": true
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.OpenUrl",
+            "title": "📄 학식 페이지 보기",
+            "url": "https://www.kopo.ac.kr/gumi/..."
+          },
+          {
+            "type": "Action.OpenUrl",
+            "title": "😋 만족도 투표",
+            "url": "https://forms.office.com/r/xxxx"
+          }
+        ]
+      }
+    }
+  ]
+}
