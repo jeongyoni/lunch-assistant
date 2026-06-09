@@ -11,21 +11,21 @@
     "망고쥬스"
   ],
   "analysis": {
-    "kcal": 750,
+    "kcal": 800,
     "carb_g": 95,
     "protein_g": 30,
-    "fat_g": 25,
+    "fat_g": 35,
     "health_score": 3,
-    "comment": "오늘 메뉴는 볶음밥과 치킨이 주를 이루며, 단백질과 탄수화물이 균형을 이루고 있지만 지방이 다소 높은 편입니다. 국과 반찬이 더해져 전체적인 영양소는 다양합니다.",
+    "comment": "다양한 재료가 포함되어 있지만, 지방과 칼로리가 다소 높은 편입니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
       "볶음밥",
       "치킨",
       "국물",
-      "영양"
+      "한식"
     ],
-    "cheer": "화요일에는 맛있는 날치알김치볶음밥으로 에너지를 충전하세요!"
+    "cheer": "화요일에도 맛있고 든든한 한 끼로 힘내세요!"
   },
   "allergens": [
     "닭고기",
@@ -41,5 +41,5 @@
     "배추김치"
   ],
   "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-09.png?v=2026-06-09",
-  "notified": true
+  "notified": false
 }
