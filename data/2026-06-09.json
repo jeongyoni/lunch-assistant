@@ -11,12 +11,12 @@
     "망고쥬스"
   ],
   "analysis": {
-    "kcal": 750,
-    "carb_g": 95,
-    "protein_g": 30,
-    "fat_g": 25,
-    "health_score": 4,
-    "comment": "다양한 재료가 조화를 이루는 맛있는 한 끼입니다. 그러나 칼로리가 다소 높은 편이니 주의가 필요합니다.",
+    "kcal": 800,
+    "carb_g": 90,
+    "protein_g": 35,
+    "fat_g": 30,
+    "health_score": 3,
+    "comment": "다양한 영양소가 포함되어 있지만, 칼로리가 다소 높은 편입니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
@@ -24,7 +24,7 @@
       "치킨",
       "국물요리"
     ],
-    "cheer": "맛있는 화요일, 힘찬 하루를 보내세요!"
+    "cheer": "화요일에는 맛있는 날치알김치볶음밥으로 힘내세요!"
   },
   "allergens": [
     "닭고기",
