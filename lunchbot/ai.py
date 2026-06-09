@@ -18,43 +18,28 @@ def _headers():
 
 
 def analyze_menu(menu_items, weekday=""):
-    """메뉴를 분석해 칼로리·탄단지·건강점수·추천여부·코멘트·응원을 JSON으로 반환.
-
-    주의: 스키마 예시에 '실제 숫자'를 넣으면 작은 모델이 그 값을 그대로 복사해버려
-    매일 같은 결과가 나온다. 그래서 예시는 모두 '자리표시자(placeholder)'로 두고,
-    값은 반드시 이 메뉴를 근거로 새로 계산하도록 명시한다.
-    """
+    """메뉴를 분석해 칼로리·탄단지·건강점수·추천여부·코멘트·응원을 JSON으로 반환."""
     menu_str = ", ".join(menu_items)
     day_line = f"오늘은 {weekday}입니다.\n" if weekday else ""
     prompt = (
-        "너는 한국 구내식당 메뉴를 평가하는 영양사야. "
-        "아래 '오늘 메뉴'만 보고 한 끼 기준 영양을 추정해서 평가해줘. "
-        "정확한 측정값이 아니라, 이 메뉴 구성에 맞는 합리적인 어림값이면 돼.\n"
+        "너는 한국 구내식당 메뉴를 평가하는 영양사야. 아래 '오늘의 메뉴'를 보고 "
+        "한 끼 기준 영양을 직접 추정해. 메뉴 구성에 따라 값이 매번 달라져야 하며, "
+        "아래 예시 숫자(0)를 절대 그대로 쓰지 마.\n"
         f"{day_line}"
-        f"오늘 메뉴: {menu_str}\n\n"
-        "반드시 지킬 것:\n"
-        "- 모든 숫자는 위 '오늘 메뉴'를 근거로 직접 산출해. 메뉴가 다르면 숫자도 달라져야 해.\n"
-        "- 아래 형식의 값들은 '예시'일 뿐이다. 예시의 숫자나 문구를 그대로 복사하지 마.\n"
-        "- 설명 문장 없이 JSON 객체만 출력해.\n\n"
-        "출력 형식 (꺾쇠 안은 채워 넣을 자리이며, 예시 값을 재사용하지 말 것):\n"
-        "{\n"
-        '  "kcal": <한 끼 총열량을 나타내는 정수>,\n'
-        '  "carb_g": <탄수화물 g 정수>,\n'
-        '  "protein_g": <단백질 g 정수>,\n'
-        '  "fat_g": <지방 g 정수>,\n'
-        '  "health_score": <1~5 사이 정수, 5가 가장 건강>,\n'
-        '  "comment": "<이 메뉴에 맞춘 1~2문장 평가>",\n'
-        '  "diet_friendly": <true 또는 false>,\n'
-        '  "post_workout": <true 또는 false>,\n'
-        '  "tags": ["<짧은 키워드>", "<짧은 키워드>"],\n'
-        '  "cheer": "<오늘 메뉴와 요일을 살린 따뜻한 응원 한마디>"\n'
-        "}\n\n"
-        "추가 규칙:\n"
-        "- kcal/carb_g/protein_g/fat_g 는 모두 정수.\n"
-        "- comment 는 1~2문장, 이 메뉴의 실제 구성(주메뉴·국·반찬)을 반영할 것.\n"
-        "- tags 는 2~4개의 짧은 키워드.\n"
-        "- cheer 는 1문장, 오늘 메뉴/요일을 살려 매번 다르게.\n"
-        "- 다시 강조: 예시 숫자(자리표시자)를 그대로 쓰지 말고 메뉴 기준으로 계산할 것."
+        f"오늘의 메뉴: {menu_str}\n\n"
+        "아래 JSON 형식으로만 답해(설명·마크다운 금지). 각 필드 의미:\n"
+        "- kcal: 이 메뉴 한 끼 총 추정 칼로리 (정수)\n"
+        "- carbohydrate_g / protein_g / fat_g: 탄수화물·단백질·지방 추정량 (정수, g)\n"
+        "- health_score: 1~5 정수 (5가 가장 건강)\n"
+        "- comment: 이 메뉴에 대한 1~2문장 평가\n"
+        "- diet_friendly: 다이어트에 적합하면 true, 아니면 false\n"
+        "- post_workout: 운동 후 식사로 적합하면 true, 아니면 false\n"
+        "- tags: 이 메뉴를 설명하는 짧은 키워드 2~4개\n"
+        "- cheer: 오늘 메뉴와 요일을 살린 따뜻한 응원 한마디(1문장)\n\n"
+        "형식 예시(값은 빈 칸이니 그대로 쓰지 말고 실제 메뉴로 채울 것):\n"
+        '{"kcal": 0, "carbohydrate_g": 0, "protein_g": 0, "fat_g": 0, '
+        '"health_score": 3, "comment": "", "diet_friendly": false, '
+        '"post_workout": false, "tags": [], "cheer": ""}'
     )
     try:
         r = request_with_retry(
@@ -87,7 +72,7 @@ def _normalize(d):
 
     return {
         "kcal": _int(d.get("kcal")),
-        "carb_g": _int(d.get("carb_g")),
+        "carb_g": _int(d.get("carbohydrate_g", d.get("carb_g"))),
         "protein_g": _int(d.get("protein_g")),
         "fat_g": _int(d.get("fat_g")),
         "health_score": _int(d.get("health_score")) or 3,
