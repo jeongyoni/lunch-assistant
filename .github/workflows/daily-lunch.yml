@@ -3,7 +3,7 @@ name: Daily Lunch
 on:
   schedule:
     # UTC  UTC 01:30 = KST 10:30, 평일(월~금). GitHub cron은 수 분 지연될 수 있음
-    - cron: "35 1 * * 1-5"
+    - cron: "45 1 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
