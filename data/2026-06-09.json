@@ -12,20 +12,20 @@
   ],
   "analysis": {
     "kcal": 750,
-    "carb_g": 90,
+    "carb_g": 95,
     "protein_g": 30,
     "fat_g": 25,
-    "health_score": 4,
-    "comment": "영양이 균형 잡힌 메뉴로, 에너지를 보충하기에 좋습니다. 특히 단백질이 풍부하여 근육 회복에 도움을 줍니다.",
+    "health_score": 3,
+    "comment": "오늘 메뉴는 볶음밥과 치킨이 주를 이루며, 단백질과 탄수화물이 균형을 이루고 있지만 지방이 다소 높은 편입니다. 국과 반찬이 더해져 전체적인 영양소는 다양합니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
-      "고단백",
-      "국물포함",
-      "매운맛",
-      "영양가득"
+      "볶음밥",
+      "치킨",
+      "국물",
+      "영양"
     ],
-    "cheer": "화요일에 기분 좋게 한 끼, 맛있게 드시고 힘내세요!"
+    "cheer": "화요일에는 맛있는 날치알김치볶음밥으로 에너지를 충전하세요!"
   },
   "allergens": [
     "닭고기",
@@ -41,5 +41,5 @@
     "배추김치"
   ],
   "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-09.png?v=2026-06-09",
-  "notified": true
+  "notified": false
 }
