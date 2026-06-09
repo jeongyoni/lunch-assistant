@@ -3,7 +3,7 @@ name: Weekly Summary
 on:
   schedule:
     # UTC 08:00 = KST 17:00, 매주 금요일 (그 주 데이터가 다 쌓인 뒤)
-    - cron: "0 8 * * 5"
+    - cron: "0 0 * * 1-5"
   workflow_dispatch:
 
 permissions:
