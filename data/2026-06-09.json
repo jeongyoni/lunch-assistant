@@ -11,21 +11,20 @@
     "망고쥬스"
   ],
   "analysis": {
-    "kcal": 800,
-    "carb_g": 95,
+    "kcal": 850,
+    "carb_g": 110,
     "protein_g": 30,
     "fat_g": 35,
     "health_score": 3,
-    "comment": "다양한 재료가 포함되어 있지만, 지방과 칼로리가 다소 높은 편입니다.",
+    "comment": "오늘의 메뉴는 다양한 맛을 제공하지만, 지방과 칼로리가 다소 높은 편입니다.",
     "diet_friendly": false,
     "post_workout": true,
     "tags": [
       "볶음밥",
       "치킨",
-      "국물",
-      "한식"
+      "국물요리"
     ],
-    "cheer": "화요일에도 맛있고 든든한 한 끼로 힘내세요!"
+    "cheer": "화요일이니 힘내서 한 주를 잘 마무리해요!"
   },
   "allergens": [
     "닭고기",
@@ -41,5 +40,5 @@
     "배추김치"
   ],
   "image_url": "https://raw.githubusercontent.com/jeongyoni/lunch-assistant/main/images/2026-06-09.png?v=2026-06-09",
-  "notified": true
+  "notified": false
 }
