@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-12",
+  "weekday": "금요일",
+  "menu": [
+    "냉모밀",
+    "추가밥",
+    "떡갈비데리야끼조림",
+    "사라다",
+    "단무지무침",
+    "배추김치"
+  ],
+  "analysis": null,
+  "allergens": [],
+  "tomorrow_label": "월요일",
+  "tomorrow_menu": [
+    "치즈닭갈비",
+    "흑미밥",
+    "청양된장찌개",
+    "볼어묵간장조림",
+    "새콤쌈무",
+    "알타리김치"
+  ],
+  "image_url": null,
+  "notified": false
+}
