@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-16",
+  "weekday": "목요일",
+  "menu": [
+    "소고기콩나물밥*양념장",
+    "아욱된장국",
+    "임꺽정떡갈비*콘소스",
+    "청포묵김가루무침",
+    "오이생채",
+    "깍두기"
+  ],
+  "analysis": null,
+  "allergens": [
+    "소고기"
+  ],
+  "tomorrow_label": "금요일",
+  "tomorrow_menu": [],
+  "image_url": null,
+  "notified": false
+}
