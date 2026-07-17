@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-17",
+  "weekday": "금요일",
+  "menu": [],
+  "analysis": null,
+  "allergens": [],
+  "tomorrow_label": "월요일",
+  "tomorrow_menu": [
+    "돈육짜장불고기",
+    "기장밥",
+    "열무된장국",
+    "온두부*양념장",
+    "치커리겉절이",
+    "배추김치"
+  ],
+  "image_url": null,
+  "notified": false
+}
