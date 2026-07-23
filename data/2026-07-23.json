@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-23",
+  "weekday": "목요일",
+  "menu": [
+    "돈육김치볶음",
+    "기장밥",
+    "미역국",
+    "통두부구이*양념장",
+    "치커리유자무침",
+    "알타리김치",
+    "수정과"
+  ],
+  "analysis": null,
+  "allergens": [
+    "대두"
+  ],
+  "tomorrow_label": "금요일",
+  "tomorrow_menu": [
+    "김밥",
+    "진라면(작은컵)"
+  ],
+  "image_url": null,
+  "notified": false
+}
