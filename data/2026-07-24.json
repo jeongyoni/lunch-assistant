@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-24",
+  "weekday": "금요일",
+  "menu": [
+    "김밥",
+    "진라면(작은컵)"
+  ],
+  "analysis": null,
+  "allergens": [
+    "밀"
+  ],
+  "tomorrow_label": "월요일",
+  "tomorrow_menu": [
+    "닭볶음탕",
+    "흑미밥",
+    "우무묵오이냉국",
+    "메밀면야채무침",
+    "간장깻잎지",
+    "배추김치"
+  ],
+  "image_url": null,
+  "notified": false
+}
