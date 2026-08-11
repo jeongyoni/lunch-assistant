@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-11",
+  "weekday": "화요일",
+  "menu": [
+    "불고기김밥",
+    "즉석어묵탕"
+  ],
+  "analysis": null,
+  "allergens": [
+    "생선"
+  ],
+  "tomorrow_label": "수요일",
+  "tomorrow_menu": [
+    "고추장소고기삼각김밥",
+    "호밀크랩샌드위치",
+    "망고쥬스"
+  ],
+  "image_url": null,
+  "notified": false
+}
