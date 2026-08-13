@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-13",
+  "weekday": "목요일",
+  "menu": [
+    "참치김치김밥",
+    "드링킹요거트(포도)"
+  ],
+  "analysis": null,
+  "allergens": [
+    "우유"
+  ],
+  "tomorrow_label": "금요일",
+  "tomorrow_menu": [
+    "고추바사삭장각닭다리*스리라차마요소스",
+    "흑미밥",
+    "유부된장국",
+    "쥬키니파스타",
+    "오이피클&할라피뇨",
+    "깍두기"
+  ],
+  "image_url": null,
+  "notified": false
+}
