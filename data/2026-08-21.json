@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-21",
+  "weekday": "금요일",
+  "menu": [
+    "제육볶음",
+    "흑미밥",
+    "감자호박된장국",
+    "한식잡채",
+    "양배추숙쌈*쌈장",
+    "배추김치",
+    "식혜"
+  ],
+  "analysis": null,
+  "allergens": [
+    "돼지고기"
+  ],
+  "tomorrow_label": "월요일",
+  "tomorrow_menu": [],
+  "image_url": null,
+  "notified": false
+}
