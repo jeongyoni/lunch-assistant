@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-23",
+  "weekday": "수요일",
+  "menu": [
+    "우양지쌀국수",
+    "추가밥",
+    "피자왕춘권튀김*칠리소스",
+    "쏨땀",
+    "열무김치",
+    "망고푸딩"
+  ],
+  "analysis": null,
+  "allergens": [
+    "밀"
+  ],
+  "tomorrow_label": "목요일",
+  "tomorrow_menu": [],
+  "image_url": null,
+  "notified": false
+}
