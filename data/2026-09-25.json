@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-25",
+  "weekday": "금요일",
+  "menu": [],
+  "analysis": null,
+  "allergens": [],
+  "tomorrow_label": "월요일",
+  "tomorrow_menu": [
+    "산채들기름볶음밥*양념장",
+    "오징어무국",
+    "임꺽정떡갈비*콘소스",
+    "삼색계란찜",
+    "구운파래김",
+    "배추김치"
+  ],
+  "image_url": null,
+  "notified": false
+}
