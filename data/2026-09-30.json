@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-30",
+  "weekday": "수요일",
+  "menu": [
+    "나주곰탕",
+    "흑미밥",
+    "고추마요미트볼",
+    "감자범벅",
+    "야채스틱*쌈장",
+    "석박지"
+  ],
+  "analysis": null,
+  "allergens": [],
+  "tomorrow_label": "목요일",
+  "tomorrow_menu": [
+    "묵은지닭찜",
+    "차조밥",
+    "사골우거지탕",
+    "청포묵김가루무침",
+    "다시마튀각",
+    "깍두기"
+  ],
+  "image_url": null,
+  "notified": false
+}
