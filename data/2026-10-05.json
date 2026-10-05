@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-05",
+  "weekday": "월요일",
+  "menu": [],
+  "analysis": null,
+  "allergens": [],
+  "tomorrow_label": "화요일",
+  "tomorrow_menu": [
+    "돈육김치찌개",
+    "흑미밥",
+    "마늘닭강정",
+    "호박게맛살볶음",
+    "건파래자반",
+    "깍두기"
+  ],
+  "image_url": null,
+  "notified": false
+}
